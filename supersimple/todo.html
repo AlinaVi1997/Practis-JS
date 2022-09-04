@@ -1,0 +1,93 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .date-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 20px;
+      padding: 5px;
+      border: 1px solid gainsboro;
+      border-radius: 4px;
+      font-size: 20px;
+    }
+
+    .date-container-item {
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <button>Press me</button> -->
+
+  <div class="date-container">
+
+    <div class="date-container-item" id="month"></div>
+    <div class="date-container-item" id="day"></div>
+    <div class="date-container-item" id="year"></div>
+    <div id="hours"></div>
+    <div id="minutes"></div>
+    <div id="seconds"></div>
+
+  </div>
+
+  <script>
+    let todo1 = 99;
+    let todo2 = 'Wash car';
+    let todo3 =  'Make dinner';
+  </script>
+  <script>
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const nowDate = new Date();
+    const month = monthNames[nowDate.getMonth()];
+    const day = nowDate.getDate();
+    const year = nowDate.getFullYear();
+    const seconds = nowDate.getSeconds();
+    const minutes = nowDate.getMinutes();
+    const hours = nowDate.getHours();
+    // console.log(`${month} ${day}, ${year}`);
+    document.getElementById('month').innerText = month;
+    document.getElementById('day').innerText = day + ',';
+    document.getElementById('year').innerText = year;
+    document.getElementById('hours').innerText = hours + ':';
+    document.getElementById('minutes').innerText = minutes + ':';
+    document.getElementById('seconds').innerText = seconds;
+
+    const date = {
+      getHours: () => {
+        return 20;
+      }
+    };
+
+    date.getHours()
+
+    setInterval(() => {
+      document.getElementById('hours').innerText = new Date().getHours() + ':';
+      document.getElementById('minutes').innerText = new Date().getMinutes() + ':';
+      document.getElementById('seconds').innerText = new Date().getSeconds();
+    }, 1000);
+  
+  </script>
+  
+</body>
+</html>
