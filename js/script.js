@@ -25,8 +25,3 @@ const answers = [];
 answers[0] = prompt ('whats your name ?','');
 answers[1] = prompt ('your last name?','');
 answers[2] = prompt ('How old are you?','');
-
-document.write (answers);
-
-
-
