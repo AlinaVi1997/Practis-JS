@@ -36,13 +36,25 @@ genres: [],
 privat: false
 };
 
-console.log (personalmovieDB);
+for (let i=0; i<2; i++){
+   const a = prompt ('one of the previously movies wachted?',''),
+         b = prompt ('Whats mark is movies?','');
+   if (a != null && b != null && a !=''&& b !='' && a.length <50){
+      personalmovieDB.movies[a] = b;
+      console.log('done');
+   } else {
+      console.log ('error');
+      i--;
+   }
+}
 
-const a = prompt ('one of the previously movies wachted?',''),
-      b = prompt ('Whats mark is movies?',''),
-      c = prompt ('one of the previously movies wachted?',''),
-      d = prompt ('Whats mark is movies?','');
-
-personalmovieDB.movies[a]=b;
-personalmovieDB.movies[c]=d;
+if (personalmovieDB.count <10){
+   console.log("watched quite a few films");
+} else if (personalmovieDB.count >=10 && personalmovieDB.count <30) {
+   console.log ("You are clasic viewer ");
+}  else if (personalmovieDB.count >=30){
+   console.log("You are like movies");  
+} else {
+   console.log("Make mistake");  
+}
 console.log(personalmovieDB);
