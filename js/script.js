@@ -27,7 +27,16 @@
 // answers[2] = prompt ('How old are you?','');
 
 
-const number0fFilms = +prompt  ("how movies have already you watced?",'');
+let number0fFilms;
+
+function start() {
+   number0fFilms = +prompt  ("how movies have already you watced?",'');
+   while (number0fFilms== '' || number0fFilms==null || isNaN(number0fFilms)) {
+      number0fFilms = +prompt  ("how movies have already you watced?",'');
+   }
+}
+start();
+
 const personalmovieDB =  {
 count: number0fFilms,
 movies: {},
