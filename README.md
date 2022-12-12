@@ -1,2 +1,1 @@
-# project
-Добрый день everybody )
+Practic Js
